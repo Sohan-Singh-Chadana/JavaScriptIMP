@@ -1,0 +1,74 @@
+/* .css-imge {
+    border: 10px solid #ed0909 !important;
+} */
+
+[ alt="javascript roadmap"] {
+    border: 5px solid rgb(237, 9, 9);
+}
+
+p b {
+    /* display: none; */
+    /* visibility: hidden; */
+    /* opacity: 0;
+    pointer-events: none; */
+    border: 0;
+}
+
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.darkMode {
+    background-color: #070707;
+    color: #00ffd2;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+[SSR] {
+    background-color: yellow;
+}
+
+#heading {
+    color: coral;
+}
+
+a {
+    /* font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0px 5px;
+    font-family: cursive;
+    font-style: italic;
+    color: red; */
+}
+
+a:visited {
+    color: yellow !important;
+}
+
+.green-link {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0px 5px;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.wavy-link {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+
+.my-link {
+    border: 1px solid white;
+}

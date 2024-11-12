@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clcok App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="clock-wrapper">
+            <div class="clock">
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+                <div class="center"></div>
+                <div class="numbers">
+                    <!-- <div class="number" style="--i:1"><span>1</span></div>
+                    <div class="number" style="--i:2"><span>2</span></div>
+                    <div class="number" style="--i:3"><span>3</span></div>
+                    <div class="number" style="--i:4"><span>4</span></div>
+                    <div class="number" style="--i:5"><span>5</span></div>
+                    <div class="number" style="--i:6"><span>6</span></div>
+                    <div class="number" style="--i:7"><span>7</span></div>
+                    <div class="number" style="--i:8"><span>8</span></div>
+                    <div class="number" style="--i:9"><span>9</span></div>
+                    <div class="number" style="--i:10"><span>10</span></div>
+                    <div class="number" style="--i:11"><span>11</span></div>
+                    <div class="number" style="--i:12"><span>12</span></div> -->
+                </div>
+                <div class="lines">
+                    <!-- <div class="line" style="--i: 1"></div>
+                    <div class="line" style="--i: 2"></div>
+                    <div class="line" style="--i: 3"></div>
+                    <div class="line" style="--i: 4"></div>
+                    <div class="line" style="--i: 5"></div>
+                    <div class="line" style="--i: 6"></div>
+                    <div class="line" style="--i: 7"></div>
+                    <div class="line" style="--i: 8"></div>
+                    <div class="line" style="--i: 9"></div>
+                    <div class="line" style="--i: 10"></div>
+                    <div class="line" style="--i: 11"></div>
+                    <div class="line" style="--i: 12"></div> -->
+                </div>
+                <div class="am-pm">
+                    <div class="am active">AM</div>
+                    <div class="pm">PM</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alarms">
+            <!-- <div class="alarm">
+                <div class="head">
+                    <div class="name">Alarm</div>
+                </div>
+                <div class="body">
+                    <div class="left">
+                        <div class="time">12:00</div>
+                        <label class="toggle">
+                            <input type="checkbox" class="checkbox" hidden>
+                            <div class="track"></div>
+                            <div class="thumb"></div>
+                        </label>
+                    </div>
+                    <div class="days">
+                        <div class="day">M</div>
+                        <div class="day">T</div>
+                        <div class="day">W</div>
+                        <div class="day">T</div>
+                        <div class="day">F</div>
+                        <div class="day">S</div>
+                    </div>
+                </div>
+                <div class="delete">
+                    <img src="icons/delete.png" alt="delete">
+                </div>
+            </div> -->
+        </div>
+        <div id="add-alarm-btn">
+            <span>+</span>
+        </div>
+        <div class="modal " id="add-alarm-modal">
+            <div class="content">
+                <div class="head">
+                    <div class="title">Add Alarm</div>
+                    <div class="close">&times;</div>
+                </div>
+                <div class="body">
+                    <div class="name">
+                        <input type="text" id="name" value="Alarms">
+                    </div>
+                    <div class="time editTime">
+                        <div class="hour">
+                            <div class="up">+</div>
+                            <div class="number">12</div>
+                            <div class="down">-</div>
+                        </div>
+                        <div class="minute">
+                            <div class="up">+</div>
+                            <div class="number">00</div>
+                            <div class="down">-</div>
+                        </div>
+                        <div class="Am-Pm">
+                            <!-- <div class="AM">AM</div> -->
+                            <!-- <div class="AM-PM">AM</div> -->
+                            <!-- <div class="PM">PM</div> -->
+                        </div>
+                    </div>
+                    <div class="days-select">
+                        <div class="day" data-day="0">S</div>
+                        <div class="day" data-day="1">M</div>
+                        <div class="day" data-day="2">T</div>
+                        <div class="day" data-day="3">W</div>
+                        <div class="day" data-day="4">T</div>
+                        <div class="day" data-day="5">F</div>
+                        <div class="day" data-day="6">S</div>
+                    </div>
+                </div>
+                <div class="alarm-sound">
+                    <label for="alarm-sound-input" class="custom-file-upload"> Choose Sound</label>
+                    <input type="file" id="alarm-sound-input" accept="audio/*">
+                </div>
+                <div class=" footer ">
+                    <div class="btn cancel ">Cancel</div>
+                    <div class="btn save ">Save</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="script.js "></script> -->
+    <!-- <script src="script2.js "></script> -->
+    <script src="script1.js "></script>
+</body>
+
+</html>

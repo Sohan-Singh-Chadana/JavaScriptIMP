@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Quiz App </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <!-- Start Quiz Button -->
+    <div class="start_btn"><button>Start Quiz</button></div>
+
+    <!-- info Box  -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quiz">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Awesome Quiz Application</div>
+            <!-- Audio Tag  -->
+            <audio src="sound/timer3.wav" id="timer_sound"></audio>
+            <audio src="sound/wrong.mp3" id="wrong_sound"></audio>
+            <audio src="sound/correct.mp3" id="correct_sound"></audio>
+            <audio src="sound/success.mp3" id="success_sound"></audio>
+            <audio src="sound/startsound.mp3" id="start_sound"></audio>
+            <audio src="sound/failuresound.mp3" id="failure_sound"></audio>
+            <div class="timer">
+                <div class="time_left_text">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- Here i have inserted questions from Javascript -->
+            </div>
+            <div class="option_list">
+                <!-- Here i have inserted options from Javascript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!-- Here i've inserted Question Count Number from Javascript -->
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quize!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from Javascript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
+
+
+
+</body>
+<!-- FontAwesome CDN Link for Icon -->
+<script src="https://kit.fontawesome.com/7b88466858.js" crossorigin="anonymous"></script>
+<!-- main script file -->
+<script src="script.js"></script>
+<script src="questions.js"></script>
+<!-- <script src="main.js"></script> -->
+
+</html>

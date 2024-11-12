@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript All Array Method </title>
+    <style>
+        body {
+            font-family: cursive;
+            background: rgb(40, 19, 77);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript All Array Method </h1>
+    <!-- <div>
+        <img src="https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079" alt="" id="img1">
+        <img src="https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022" alt="" id="img2">
+    </div> -->
+    <li>
+        <div class="card">
+            <div class="imgbox">
+                <img class="my-img" id="my-img1" src="https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079" alt="Denim Jeans">
+                <!-- <img src="https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022" alt="" class="my-imghover"> -->
+            </div>
+            <h1>Lorem1</h1>
+            <span class="price-first">$24.99</span>
+            <span class="price">$17.99</span>
+            <br>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <p>Lorem ipsum dolor sit amet..</p>
+            <button class="add-to">Add to Cart</button>
+        </div>
+    </li>
+    <li>
+        <div class="card">
+            <div class="imgbox">
+                <img class="my-img" id="my-img2" src="https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079" alt="Denim Jeans">
+                <!-- <img src="https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022" alt="" class="my-imghover"> -->
+            </div>
+            <h1>Lorem2</h1>
+            <span class="price-first ">$24.99</span>
+            <span class="price ">$14.99</span>
+            <br>
+            <span class="fa fa-star checked "></span>
+            <span class="fa fa-star checked "></span>
+            <span class="fa fa-star checked "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <p>Lorem ipsum dolor sit amet..</p>
+            <a href="product-page.html "><button class="add-to ">Add to Cart</button></a>
+        </div>
+    </li>
+
+    <script src="arrays.js "></script>
+    <script src="arrayMethod.js "></script>
+    <script src="arraySearch.js"></script>
+    <script src="arraySort.js"></script>
+    <script>
+        let img = document.querySelectorAll(".card .imgbox img");
+        // for (let i = 0; i < img.length; i++) {
+        //     img[i].addEventListener("mouseover", () => {
+        //         document.getElementById('my-img1').src = "https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079"
+        //         document.getElementById('my-img2').src = "https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022"
+        //     })
+        //     img[i].addEventListener("mouseout", () => {
+        //         document.getElementById('my-img1').src = "https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022"
+        //         document.getElementById('my-img2').src = "https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079"
+        //     })
+        // }
+        img.forEach((image) => {
+            image.addEventListener("mouseover", () => {
+                document.getElementById('my-img1').src = "https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022"
+                document.getElementById('my-img2').src = "https://www.snitch.co.in/cdn/shop/products/SNITCH-JUNE1509_360x.jpg?v=1655120022"
+            })
+            image.addEventListener("mouseout", () => {
+                document.getElementById('my-img1').src = "https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079"
+                document.getElementById('my-img2').src = "https://www.snitch.co.in/cdn/shop/products/Geovani_22ndNov52159_360x.jpg?v=1670261079"
+            })
+
+        })
+
+        //. Write a JavaScript function to check whether an `input` is an array or not.
+        // solution: (1)
+        // function checkisArray(input) {
+        //     return Array.isArray(input)
+        // }
+        // console.log(checkisArray('w3resource')) // false
+        // console.log(checkisArray([1, 2, 4, 0])) // true
+
+        // Solution: (2)
+        // function is_Array(input) {
+        //     // console.log(toString.call(input) === "[object Array]")
+        //     // console.log(toString.call(input)) // [object Array]
+        //     if (toString.call(input) === "[object Array]") {
+        //         return true;
+        //     }
+        //     return false;
+        // }
+        // console.log(is_Array("w3resource")) //  [object String] // false
+        // console.log(is_Array([1, 2, 4, 0])) // // [object Array] // true
+        function firstelem(arr, n) {
+            if (arr == null) {
+                return undefined;
+            }
+            if (n == null) {
+                return arr[0]
+            }
+            if (n < 0) {
+                return [];
+            }
+
+            return arr.slice(0, n)
+        }
+        console.log(firstelem([7, 9, 0, -2]))
+        console.log(firstelem([], 3))
+        console.log(firstelem([7, 9, 0, -2], 3))
+        console.log(firstelem([7, 9, 0, -2], 6))
+        console.log(firstelem([7, 9, 0, -2], -3))
+        console.log(firstelem([], null)) // undefined
+    </script>
+</body>
+
+</html>

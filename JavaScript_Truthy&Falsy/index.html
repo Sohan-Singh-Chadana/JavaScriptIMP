@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Truthy and Falsy Value</title>
+</head>
+
+<body style="font-family: cursive; background-color: black; color: white;">
+    <h1>JavaScript Truthy and Falsy Value</h1>
+    <p></p>
+    <h2>Falsy Value</h2>
+    <ul>
+        <li>0</li>
+        <li>-0</li>
+        <li>-NaN</li>
+        <li>""</li>
+        <li>undefined</li>
+        <li>null</li>
+    </ul>
+    <script src="script.js"></script>
+    <script>
+        let myname = null;
+        fetch("data.json")
+            .then((response) => response.json())
+            .then((data) => {
+                myname = data.map((item) => {
+                    return (
+                        item.name //, item.age, item.city
+                    )
+
+                })
+                const ul = document.querySelector("p")
+                ul.innerHTML +=
+                    `<li>${myname.join(" ")}</li>`
+            });
+    </script>
+</body>
+
+</html>

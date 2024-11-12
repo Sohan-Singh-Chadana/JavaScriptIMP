@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ConversionOperation</title>
+</head>
+
+<body>
+    <h1>JavaScript ConversionOperation</h1>
+    <button id="color_change">Click Change Backgournd</button>
+    <button id="color_change1">Click Normal Backgournd</button>
+    <!-- <script src="index.js"></script> -->
+    <script src="practice.js"></script>
+    <script>
+        let color_change = document.querySelector("#color_change");
+        let color_change1 = document.querySelector("#color_change1");
+
+
+        color_change.onclick = function() {
+            changecolor()
+        };
+        color_change1.onclick = function() {
+            normalcolor()
+        };
+
+
+        function changecolor() {
+            document.body.style.backgroundColor = "#48C9B0"
+            document.body.style.color = "#ffffff"
+        }
+
+        function normalcolor() {
+            document.body.style.backgroundColor = "#ffffff"
+            document.body.style.color = "#000000"
+        }
+    </script>
+</body>
+
+</html>

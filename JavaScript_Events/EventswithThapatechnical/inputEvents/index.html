@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inpt Event</title>
+    <style>
+        body {
+            background-color: black;
+            color: rgb(246, 9, 139);
+            font-family: cursive;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 0;
+            outline: 0;
+            margin-bottom: 5px;
+            min-width: 400px;
+        }
+
+        .output {
+            background-color: rgb(34, 32, 32);
+            color: rgb(242, 246, 250);
+            padding: 10px;
+            border-radius: 10px;
+            border: 0;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+            min-width: 400px;
+            border-left: 2px solid white;
+            border-right: 2px solid white;
+        }
+
+        span {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Input Evetes</h1>
+    <section>
+        <input type="text" id="myInput" placeholder="Type Something..." name="username" autocomplete="off">
+        <div class="output">
+            <p class="inputvalue">Input value:</p>
+            <p class="inputName">Input name:</p>
+            <p class="inputType">Input type:</p>
+            <p class="eventType">Event type:</p>
+        </div>
+    </section>
+    <script>
+        const inputElem = document.getElementById("myInput");
+
+        const handleInput = (e) => {
+            console.log(e)
+            console.log("Input value:", e.target.value)
+            console.log("Input name:", e.target.name)
+            console.log("Input type:", e.inputType)
+            console.log("Event type:", e.type);
+
+
+            document.querySelector('.inputvalue').innerHTML = `Input value : <span> ${e.target.value}</span>`;
+
+            document.querySelector('.inputName').innerHTML = `Input name : <span> ${e.target.name}</span>`;
+
+            document.querySelector('.inputType').innerHTML = `Input type : <span> ${e.inputType}</span>`;
+
+            document.querySelector('.eventType').innerHTML = `Event type : <span> ${e.type}</span>`;
+        }
+
+        // inputElem.addEventListener('input', handleInput);
+        inputElem.addEventListener('change', handleInput)
+        inputElem.focus();
+    </script>
+</body>
+
+</html>

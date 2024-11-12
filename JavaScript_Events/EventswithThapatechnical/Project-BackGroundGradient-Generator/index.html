@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
+            background-image: linear-gradient(to right top, #f345c4, #4d0ff8);
+            ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        #myButton {
+            background: #3c15e2;
+            color: white;
+            padding: 8px 35px;
+            border-radius: 40px;
+            margin-right: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        #myButton2 {
+            background: #23d419;
+            color: black;
+            padding: 8px 35px;
+            border-radius: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: lighter;
+        }
+
+        .copyCode {
+            width: 359px;
+            background: rgb(215 218 239 / 29%);
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: white;
+            border-left: 2px solid white;
+            border-radius: 10px;
+            font-weight: lighter;
+            cursor: pointer;
+        }
+
+        .copyCode #span1 {
+            color: #fff;
+        }
+
+        .copyCode #span2 {
+            color: #020709;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div>
+            <buttton id="myButton">#519371</buttton>
+            <buttton id="myButton2">#008793</buttton>
+        </div>
+        <h2>Copy your code here</h2>
+        <div class="copyCode">
+            background-image: linear-gradient(to right, rgb(92, 145, 229), rgb(152, 63, 198));
+        </div>
+    </section>
+    <script>
+        let btn1 = document.getElementById("myButton");
+        let btn2 = document.getElementById("myButton2");
+        let copyCode = document.querySelector(".copyCode");
+        let rgb1 = '#519371'
+        let rgb2 = "#008793"
+
+        const hexValues = () => {
+            let myHexaValues = "0123456789abcdef";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                let randomNumber = Math.floor(Math.random() * 16)
+                color = color + myHexaValues[randomNumber]
+            }
+            return color;
+        }
+
+        const handleButton1 = () => {
+            rgb1 = hexValues();
+            // console.log(rgb1)
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2}`;
+            copyCode.innerHTML = ` background-image: linear-gradient(to right, <span id="span1">${rgb1},${rgb2}</span>);`;
+            btn1.innerText = rgb1;
+            btn1.style.backgroundColor = rgb1;
+        }
+
+        const handleButton2 = () => {
+            rgb2 = hexValues();
+            // console.log(rgb2);
+            document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2}`;
+            copyCode.innerHTML = `background-image: linear-gradient(to right, <span id="span2">${rgb1},${rgb2}</span>);`;
+            btn2.innerText = rgb2;
+            btn2.style.backgroundColor = rgb2;
+        }
+
+        btn1.addEventListener("click", handleButton1);
+        btn2.addEventListener("click", handleButton2);
+
+
+        copyCode.addEventListener("click", () => {
+            navigator.clipboard.writeText(copyCode.innerText);
+            alert("Copied the color");
+        })
+    </script>
+</body>
+
+</html>

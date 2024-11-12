@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai or code</title>
+    <style>
+        body {
+            background-color: black;
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title" class="heading">⭐ Dom Learning on chai aur code </h1>
+</body>
+<script>
+    const div = document.createElement("div")
+    console.log(div)
+    div.className = "main";
+    div.id = Math.round(Math.random() * 10 + 1);
+    div.setAttribute("title", 'Generated title');
+    div.style.backgroundColor = 'Yellow'
+    div.style.padding = '12px';
+    // div.innerHTML = "chai aur code"
+
+
+
+
+    // * create textNode
+    const addText = document.createTextNode("Chai aur code");
+    div.appendChild(addText);
+
+
+    // * element attaching
+    document.body.appendChild(div);
+</script>
+
+</html>

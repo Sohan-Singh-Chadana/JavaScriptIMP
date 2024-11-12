@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Iterations(Loops) Learn</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #ffea06;
+        }
+
+        .cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: gold;
+            border-radius: 50%;
+        }
+
+        .cursor:hover {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(247, 9, 49);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Iterations(Loops) Learn</h1>
+    <div class="cursor"></div>
+    <script>
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.top = e.pageY + "px";
+            cursor.style.left = e.pageX + "px";
+        });
+
+        document.addEventListener("mouseover", () => {
+            cursor.classList.add("hover");
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.classList.remove("hover");
+        });
+    </script>
+    <script src="forloop.js"></script>
+    <script src="while&dowhile.js"></script>
+    <script src="three.js"></script>
+    <script src="four.js"></script>
+    <script src="five.js"></script>
+</body>
+
+</html>

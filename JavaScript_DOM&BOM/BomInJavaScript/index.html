@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - Browser Object Model</title>
+    <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:1358/1*0nHtg7jz-cd49KIb-Za8lg.png" type="image/x-icon">
+    <style>
+         :root {
+            --bgcolor: #000;
+            --animation: 20s;
+        }
+
+        body {
+            background-color: var(--bgcolor);
+            color: rgb(103, 165, 235);
+            font-family: cursive;
+            letter-spacing: 1px;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid rgb(237, 8, 84);
+            border-bottom: 16px solid rgb(243, 8, 86);
+            border-left: 16px solid #ddef0e;
+            border-right: 16px solid #ddef0e;
+            width: 58px;
+            height: 58px;
+            background-color: transparent;
+            animation-name: spine;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            position: absolute;
+            top: 0%;
+            right: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader p {
+            animation-name: spine2;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            color: gold;
+        }
+
+        @keyframes spine2 {
+            from {
+                transform: rotate(-0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes spine {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .defination,
+        .definationExample {
+            text-align: justify;
+            padding: 0px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BOM - Browser Object Model</h1>
+
+
+    <p class="defination">
+        The Browser Object Model (BOM) is a collection of objects that allows JavaScript to interact with the browser, the document, and other browser-specific functionalities. It includes objects like Window, Navigator, Location, History, and Screen.
+    </p>
+    <p class="defination">
+        BOM objects deal with everything outside the page, like the browser window and the desktop screen. The Document Object Model (DOM) is related to the currently loaded page, which is also called the document. The BOM allows JavaScript to "talk to" the browser.
+    </p>
+    <p class="defination">
+        For example, you can use the BOM to open a new window, navigate to a new page, or get the current location of the browser. There is no standard for implementation and no strict definition for the BOM. This means that browser vendors can implement the
+    </p>
+    <p class="defination">
+        BOM in any way they wish. However, modern browsers have implemented (almost) the same methods and properties for JavaScript interactivity, it is often referred to, as methods and properties of the BOM.
+    </p>
+    <p class="definationExample">
+        Here are some examples of how to use the BOM in JavaScript: To open a new window, you can use the window.open() method. To navigate to a new page, you can use the window.location.href property. To get the current location of the browser, you can use the
+        window.location.pathname property. The BOM is a powerful tool that allows JavaScript to interact with the browser and the document. By understanding the BOM, you can write more powerful and interactive JavaScript code.
+    </p>
+    <ul>
+        <li>location</li>
+        <li>history</li>
+        <li>innerHeight</li>
+        <li>innerWidth</li>
+        <li>open()</li>
+        <li>close()</li>
+        <li>resizeBy()</li>
+        <li>resizeTo()</li>
+        <li>moveTo()</li>
+        <li>moveBy()</li>
+        <li>scrollBy()</li>
+        <li>scroll()</li>
+        <li>scrollTo()</li>
+        <li>print()</li>
+        <li>document</li>
+    </ul>
+
+    <div class="loader">
+        <p>sohan</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

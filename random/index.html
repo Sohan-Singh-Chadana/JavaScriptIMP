@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hii</title>
+</head>
+
+<body>
+    <input type="file" id="fileInput" accept="audio/*">
+    <audio id="audioPlayer" controls></audio>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // Open or create the IndexedDB database
+        const request = indexedDB.open('AudioDB', 1);
+
+        request.onupgradeneeded = function(event) {
+            const db = event.target.result;
+            db.createObjectStore('audioFiles', {
+                keyPath: 'id'
+            });
+        };
+
+        request.onsuccess = function(event) {
+            const db = event.target.result;
+            loadAudio(db);
+
+            fileInput.addEventListener('change', function() {
+                const files = this.files;
+                if (files.length === 0) {
+                    return;
+                }
+
+                const audioFile = files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    const dataURL = event.target.result;
+                    audioPlayer.src = dataURL;
+                    audioPlayer.play();
+
+                    const transaction = db.transaction(['audioFiles'], 'readwrite');
+                    const objectStore = transaction.objectStore('audioFiles');
+                    const audioData = {
+                        id: 'currentAudio',
+                        name: audioFile.name,
+                        dataURL: dataURL
+                    };
+
+                    const request = objectStore.put(audioData);
+                    request.onsuccess = function() {
+                        console.log('Audio file saved to IndexedDB');
+                    };
+                    request.onerror = function() {
+                        console.error('Error saving audio file to IndexedDB');
+                    };
+                };
+
+                reader.readAsDataURL(audioFile);
+            });
+        };
+
+        function loadAudio(db) {
+            const transaction = db.transaction(['audioFiles'], 'readonly');
+            const objectStore = transaction.objectStore('audioFiles');
+            const request = objectStore.get('currentAudio');
+
+            request.onsuccess = function(event) {
+                const audioData = event.target.result;
+                if (audioData) {
+                    audioPlayer.src = audioData.dataURL;
+                    audioPlayer.play();
+                }
+            };
+            request.onerror = function() {
+                console.error('Error loading audio file from IndexedDB');
+            };
+        }
+    </script>
+    <!-- <script>
+        const fileInput = document.getElementById('fileInput');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // Function to load the saved audio file from localStorage
+        function loadAudio() {
+            const savedAudio = localStorage.getItem('audioFile');
+            if (savedAudio) {
+                const audioData = JSON.parse(savedAudio);
+                audioPlayer.src = audioData.dataURL;
+                audioPlayer.play();
+            }
+        }
+
+        // Function to handle file input change and save the file to localStorage
+        fileInput.addEventListener('change', function() {
+            const files = this.files;
+            if (files.length === 0) {
+                return;
+            }
+
+            const audioFile = files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const dataURL = event.target.result;
+                audioPlayer.src = dataURL;
+                audioPlayer.play();
+
+                // Save the audio file information to localStorage
+                const audioData = {
+                    name: audioFile.name,
+                    dataURL: dataURL
+                };
+                localStorage.setItem('audioFile', JSON.stringify(audioData));
+            };
+
+            reader.readAsDataURL(audioFile);
+        });
+
+        // Load the audio file from localStorage when the page loads
+        window.addEventListener('load', loadAudio);
+    </script> -->
+</body>
+
+</html>

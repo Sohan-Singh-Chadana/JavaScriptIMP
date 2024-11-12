@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time in JavaScript</title>
+    <style>
+        body {
+            background-color: darkcyan;
+            color: white;
+            font-family: cursive;
+        }
+        
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px 10px;
+            text-align: center;
+        }
+        
+        table {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        th {
+            color: black;
+            background-color: lightcyan;
+        }
+        
+        tr:nth-child(even) {
+            background-color: grey;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: rgb(48, 48, 48);
+        }
+        
+        caption {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Date and Time</h1>
+    <h2><pre>const currentDate = new Date();</pre></h2>
+    <table>
+        <caption>JavaScript Date Methods CheatSheet</caption>
+        <tr>
+            <th>Methods</th>
+            <th> Code Example</th>
+            <th>Result</th>
+            <th>Return Type</th>
+        </tr>
+        <tr>
+            <td>getDate()</td>
+            <td>currentDate.getDate()</td>
+            <td>7 (day of the month)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getDay() </td>
+            <td>currentDate.getDay()</td>
+            <td>(day of the week, 0-6)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getMonth() </td>
+            <td>currentDate.getMonth() </td>
+            <td>11 (month, 0-11)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getFullYear() </td>
+            <td>currentDate.getFullYear() </td>
+            <td>2023</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getHours() </td>
+            <td>currentDate.getHours() </td>
+            <td>15 (hour, 0-23)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getMinutes()</td>
+            <td> currentDate.getMinutes() </td>
+            <td>45</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getSeconds() </td>
+            <td>currentDate.getSeconds()</td>
+            <td>30</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getMilliseconds() </td>
+            <td>currentDate.getMilliseconds()</td>
+            <td> 123</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getTime() </td>
+            <td>currentDate.getTime()</td>
+            <td>(timestamp)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>getTimezoneOffset() </td>
+            <td>currentDate.getTimezoneOffset() </td>
+            <td>(timezone offset in minutes)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setDate() </td>
+            <td>currentDate.setDate(14) </td>
+            <td>(sets day of the month to 14)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setMonth() </td>
+            <td>currentDate.setMonth(5) </td>
+            <td>(sets month to June, 0-11)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setFullYear() </td>
+            <td>currentDate.setFullYear(2024)</td>
+            <td> (sets full year to 2024)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setHours() </td>
+            <td>currentDate.setHours(12) </td>
+            <td>(sets hour to 12)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setMinutes() </td>
+            <td>currentDate.setMinutes(30) </td>
+            <td>(sets minute to 30)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setSeconds() </td>
+            <td>currentDate.setSeconds(0) </td>
+            <td>(sets second to 0)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setMilliseconds() </td>
+            <td>currentDate.setMilliseconds(500) </td>
+            <td>(sets millisecond to 500)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>setTime() </td>
+            <td>currentDate.setTime(timestamp) </td>
+            <td>(sets date to timestamp)</td>
+            <td>number</td>
+        </tr>
+        <tr>
+            <td>toDateString() </td>
+            <td>currentDate.toDateString() </td>
+            <td>"Tue Dec 07 2023"</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>toISOString() </td>
+            <td>currentDate.toISOString() </td>
+            <td>"2023-12-07T15:45:30.123Z"</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>toLocaleDateString()</td>
+            <td> currentDate.toLocaleDateString() </td>
+            <td>"12/7/2023"</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>toLocaleTimeString()</td>
+            <td> currentDate.toLocaleTimeString() </td>
+            <td>"3:45:30 PM"</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>toTimeString() </td>
+            <td>currentDate.toTimeString() </td>
+            <td>"15:45:30 GMT+0000 (UTC)"</td>
+            <td>string</td>
+        </tr>
+        <tr>
+            <td>toUTCString() </td>
+            <td>currentDate.toUTCString() </td>
+            <td>"Tue, 07 Dec 2023 15:45:30 GMT"</td>
+            <td>string</td>
+        </tr>
+
+    </table>
+    <script src="script.js"></script>
+    <script src="date.js"></script>
+    <script src="dategetMethod.js"></script>
+    <script src="datesetMethod.js"></script>
+    <script src="practic.js"></script>
+</body>
+
+</html>

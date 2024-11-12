@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Title Scrolling</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* styles.css */
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .marquee-container {
+            width: 300px;
+            /* Adjust width as needed */
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            border: 1px solid #fff;
+            position: relative;
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            position: absolute;
+        }
+
+        .marquee.scroll {
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="marquee-container">
+        <div class="marquee">
+            <span id="song-title">Short Song Title Example</span>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        // script.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const songTitleElement = document.getElementById('song-title');
+            const marqueeElement = document.querySelector('.marquee');
+            const marqueeContainer = document.querySelector('.marquee-container');
+
+            function updateSongTitle(newTitle) {
+                songTitleElement.textContent = newTitle;
+                checkScroll();
+            }
+
+            function checkScroll() {
+                // Remove the scroll class to reset animation
+                marqueeElement.classList.remove('scroll');
+                marqueeElement.style.transform = 'none'; // Reset transform
+
+                // Use requestAnimationFrame to ensure DOM updates are complete
+                requestAnimationFrame(() => {
+                    // Check if the song title is longer than the container
+                    if (songTitleElement.scrollWidth > marqueeContainer.clientWidth) {
+                        // Add the scroll class to start the animation
+                        marqueeElement.classList.add('scroll');
+                    }
+                });
+            }
+
+            // Example usage: update the song title dynamically
+            updateSongTitle('A Very Long Song Title That Exceeds The Container Width');
+        });
+    </script>
+</body>
+
+</html>

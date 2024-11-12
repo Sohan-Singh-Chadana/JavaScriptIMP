@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font Awesom -->
+    <script src="https://kit.fontawesome.com/7b88466858.js" crossorigin="anonymous"></script>
+    <title>Music Player </title>
+    <link rel="shortcut icon" href="./data/favIcon.png" type="image/x-icon">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container ">
+        <div class="layer ">
+            <div class="volume-slider">
+                <div class="volume-bar"></div>
+                <input type="range" min="0.01" max="1" value="1" step="0.01" class="volumerange">
+            </div>
+        </div>
+        <div class="top">
+            <div class="left-section">
+                <i class="fas fa-list menu-btn top-icon"></i>
+                <i class="fas fa-volume-up top-icon" id="volume"></i>
+            </div>
+            <div class="right-section">
+                <i class="fas fa-search  top-icon"></i>
+                <!-- * Add file input and button -->
+                <div class="fileUpload">
+                    <input type="file" id="fileInput" accept="audio/*" class="upload">
+                    <i class="fa-solid fa-plus top-icon" id="addSongBtn"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="cover-img"></div>
+        <div class="player-body"></div>
+
+
+
+
+        <div class="list-wrapper">
+            <table class="list" id="playlist">
+                <tr class="song">
+                    <td class="no">
+                        <h5>1</h5>
+                    </td>
+                    <td class="title">
+                        <h6>Song Title</h6>
+                    </td>
+                    <td class="sound-waves">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </td>
+                    <td class="length">
+                        <h5>2:03</h5>
+                    </td>
+                    <td>
+                        <i class="fas fa-heart"></i>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-ellipsis-vertical song-detail"></i>
+                    </td>
+                </tr>
+                <!-- <img src="./data/music/1.mp3" alt=""> -->
+            </table>
+        </div>
+
+        <!-- ? menu popup -->
+        <!-- <div class="box-modal">
+            <div class="bluer"></div>
+            <div class="menu-pupup">
+                <ul>
+                    <li>View Details</li>
+                    <li>Delete Song</li>
+                    <li class="cancel">Cancel</li>
+                </ul>
+            </div>
+        </div> -->
+
+        <div class="bar">
+            <div class="progress-line"></div>
+            <div class="dot"></div>
+            <div class="time">
+                <h5 class="current-time">0:00</h5>
+                <h5 class="duration">0:00</h5>
+            </div>
+        </div>
+
+        <div class="info">
+            <h2>song title</h2>
+            <h3>artist</h3>
+        </div>
+
+        <div class="controls">
+            <i class="fas  fa-backward" id="prev"></i>
+            <i class="fas  fa-play" id="playpause"></i>
+            <i class="fas  fa-forward" id="next"></i>
+        </div>
+
+        <div class="more-controls">
+            <i class="fas fa-heart" id="current-favourite"></i>
+            <i class="fas fa-random" id="shuffle"></i>
+            <i class="fas fa-repeat" id="repeat"></i>
+            <i class="fas fa-gear" id="options"></i>
+        </div>
+
+        <div class="bordertop"></div>
+        <p class="current-song-title">song title</p>
+        <div class="sound-waves-bottom">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="fixed-bottom-footer"></div>
+
+    </div>
+
+
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="addSong.js"></script> -->
+</body>
+
+</html>

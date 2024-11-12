@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai or code</title>
+    <style>
+        body {
+            background-color: black;
+            color: orangered;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title" class="heading">⭐ Dom Learning on chai aur code </h1>
+    <div class="parent">
+        <!-- this is commente -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector(".parent");
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[0].innerHTML);
+
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // };
+
+    parent.children[0].style.color = 'green';
+    // console.log(parent);
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector(".day");
+    // console.log(dayOne)
+    console.log(dayOne.parentElement);
+    // console.log(dayOne.nextElementSibling);
+    dayOne.nextElementSibling.style.color = 'yellow'
+
+
+    console.log("NODES: ", parent.childNodes);
+</script>
+
+</html>

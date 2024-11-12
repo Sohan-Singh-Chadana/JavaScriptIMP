@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DECDAC;
+    font-family: "Poppins", sans-serif;
+}
+
+.btnBox {
+    background-color: #FEFAF3;
+    border-radius: 24px;
+    width: 450px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 3px 10px 0px rgb(0 0 0 / 50%);
+    cursor: pointer;
+}
+
+.btnBox button {
+    background-color: #EBBF53;
+    border-radius: 24px;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 3px 4px 0px rgb(0 0 0 / 50%);
+    padding: 10px 20px;
+    width: 220px;
+    color: #FEFAF3;
+    font-size: 24px;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.cursor-icon {
+    position: absolute;
+    bottom: 12%;
+    right: 12%;
+    width: 40px;
+}
+
+footer {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, -2%);
+}
+
+footer p {
+    font-size: 11px;
+    color: #858585;
+}
+
+footer p span {
+    color: #f9f8f6;
+}
+
+.popup-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.popup-container.popup-open {
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: all;
+}
+
+.popup {
+    width: 600px;
+    /* height: 300px; */
+    background-color: #FEFAF3;
+    border-radius: 16px;
+    box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.popup-open .popup {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.popup-content div {
+    margin-top: 20px;
+}
+
+.popup-content img {
+    width: 180px;
+    height: 180px;
+    margin-top: -49px;
+    margin-left: 20px;
+}
+
+.popup-content h2 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.popup-content p {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.close-icon {
+    font-size: 32px;
+    font-weight: 500;
+    position: absolute;
+    right: 18px;
+    top: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    color: #AFA187;
+}
+
+.inputBox {
+    outline: 0;
+    border-radius: 28px;
+    border: 1px solid #AFA187;
+    background-color: #EEE8DD;
+    color: #AFA187;
+    padding: 8px;
+    padding-left: 20px;
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.infoBox {
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.infoBox button {
+    position: absolute;
+    right: 3%;
+    outline: 0;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border: 1px solid #EBBF53;
+    background-color: #EBBF53;
+    color: #FFF;
+    padding: 8px;
+    height: 45px;
+    width: 150px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .popup {
+        width: 500px;
+    }
+    .popup-content h2 {
+        font-size: 25px;
+    }
+    .popup-content p {
+        font-size: 12px;
+    }
+    .inputBox {
+        font-size: 12px;
+    }
+    .infoBox {
+        margin: 20px 0px;
+    }
+    .infoBox button {
+        font-size: 12px;
+        width: 120px;
+    }
+}
+
+@media (max-width: 568px) {
+    .btnBox {
+        width: 350px;
+    }
+    .popup {
+        width: 350px;
+        padding: 10px;
+    }
+    .popup-content h2 {
+        font-size: 20px;
+    }
+    .popup-content img {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+    }
+    .infoBox button {
+        width: 100px;
+    }
+    .popup-content {
+        gap: 30px;
+        flex-direction: column;
+    }
+    .btnBox button {
+        font-size: 18px;
+    }
+    .popup-content div {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 360px) {
+    .btnBox {
+        width: 300px;
+    }
+    .popup {
+        width: 320px;
+    }
+    .popup-content {
+        gap: 10px;
+    }
+}

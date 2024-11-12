@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling & Capturing</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            background-color: black;
+            color: blueviolet;
+            font-family: cursive;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .green {
+            width: 400px;
+            height: 300px;
+            background-color: green;
+        }
+
+        .pink {
+            width: 300px;
+            height: 200px;
+            background-color: hotpink;
+        }
+
+        .blue {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>⭐_ Event Bubbling & Capturing</h1>
+    <div class="green">
+        <div class="pink">
+            <div class="blue">
+                <!-- <p style="color: black; -->
+                <!-- /* background: red;">paragraph</p> */ -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

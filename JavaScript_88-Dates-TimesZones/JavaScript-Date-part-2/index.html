@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Part 2</title>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900" rel="stylesheet" />
+</head>
+
+<body style="font-family: 'Nunito', sans-serif; background-color: #000; color: #fff;">
+    <h1>Date in JavaScript</h1>
+    <h2>ISO Date Formate in Detail</h2>
+    <h3>YYYY-MM-DDTHH:mm:ss.mssZ</h3>
+    <ol>
+        <li>YYYY: represents the year with four digits(e.g., 2022).</li>
+        <li>MM: represents the month with two digits(e.g., 01 for January).</li>
+        <li>DD: represents the day with two digits(e.g., 01 for the 1st day of the month).</li>
+        <li>T: represents the starting of time after it.</li>
+        <li>HH: represents hours with two digits (24-hour formate).</li>
+        <li>mm: represents minutes with two digits.</li>
+        <li>ss: represents seconds with two digits.</li>
+        <li>sss: represents milliseconds with three digits.</li>
+        <li>Z: represents the time zone offset in the form of + HH:mm(e.g.,+ 05:30 for UTC+5:30) also we can write only Z, it means UTC time.</li>
+    </ol>
+    <h3>Here are some examples,</h3>
+    <ol>
+        <li>2024-03-06T18:23:06.682z(Z indicates that the time is expressed in UTC)</li>
+        <li>2024-03-06T18:23:06.682+05:30('+5:30' indicates that this time zone is 5 hours and 30 minutes ahead of UTC)</li>
+        <li>2024-03-06T18:23:06.682-07:00("07:00" indicates that this time zone is 7 hours and 0 minutes behind UTC)</li>
+    </ol>
+</body>
+
+</html>

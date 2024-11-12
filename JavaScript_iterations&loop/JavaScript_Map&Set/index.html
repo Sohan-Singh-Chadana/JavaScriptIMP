@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Map & Set Learn</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fb05e2;
+        }
+
+        #cursor {
+            position: fixed;
+            top: -5px;
+            left: -5px;
+            width: 10px;
+            height: 10px;
+            background-color: #fb05e2;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        #cursor-border {
+            --size: 50px;
+            position: fixed;
+            top: calc(var(--size) / -2);
+            left: calc(var(--size) / -2);
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            box-shadow: 0 0 0 1px #fb05e2;
+            pointer-events: none;
+            transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out, background-color 0.15s ease-out;
+            z-index: 999;
+        }
+
+        .cursor:hover {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(104, 9, 247);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Iterations(Loops) , Map and Set Learn</h1>
+    <div id="cursor" class="cursor"></div>
+    <div id="cursor-border"></div>
+    <script>
+        const cursor = document.querySelector("#cursor");
+        const cursorBorder = document.querySelector("#cursor-border");
+        const cursorPos = {
+            x: 0,
+            y: 0
+        };
+        const cursorBorderPos = {
+            x: 0,
+            y: 0
+        };
+
+        document.addEventListener("mousemove", (e) => {
+            cursorPos.x = e.clientX;
+            cursorPos.y = e.clientY;
+
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        requestAnimationFrame(function loop() {
+            const easting = 8;
+            cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
+            cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
+
+            cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
+            requestAnimationFrame(loop);
+        });
+
+
+
+
+        document.addEventListener("mouseover", () => {
+            cursor.classList.add("hover");
+        });
+
+        document.addEventListener("mouseout", () => {
+            cursor.classList.remove("hover");
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="set.js"></script>
+    <script src="map.js"></script>
+</body>
+
+</html>

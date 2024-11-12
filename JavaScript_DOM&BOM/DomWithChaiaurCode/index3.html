@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai or code</title>
+    <style>
+        body {
+            background-color: black;
+            color: rgb(166, 255, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title" class="heading">⭐ Dom Learning on chai aur code </h1>
+
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //* Normal Approach
+    function addLanguage(langName) {
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`
+
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript");
+
+    //* Optimazie approach
+    function addOptiLanguage(langName) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptiLanguage("goLang");
+
+    //* Edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = 'MoJo'
+
+    const newli = document.createElement("li");
+    // newli.textContent = "MoJo"
+    newli.appendChild(document.createTextNode("Mojo"))
+
+
+    secondLang.replaceWith(newli);
+
+    //* 2@ Edit
+    const FirstLang = document.querySelector("li:first-child");
+    FirstLang.outerHTML = "<li>TypeScript</li>"
+
+    // remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+</script>
+
+</html>

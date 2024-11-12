@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Event in JavaScript</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: cursive;
+            background-color: black;
+            color: darkcyan;
+        }
+
+        .container {
+            color: ivory;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card {
+            width: 100px;
+            height: 120px;
+            background-color: rgb(181, 107, 119);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 36px;
+        }
+
+        .add-card {
+            cursor: pointer;
+            background-color: gold;
+            color: black;
+            transition: all 0.5s;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            vertical-align: middle;
+            align-items: center;
+            justify-content: center;
+            line-height: 10%;
+        }
+
+        .add-card:hover {
+            transform: scale(1.06);
+            background-color: rgba(219, 200, 98, 0.981);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>⭐_ HTML Event in JavaScript</h1>
+    <h2 draggable="true">Adding Event Listeners</h2>
+    <div class="container">
+        <!-- <div class="card" ondblclick="console.log('click')">1</div> -->
+        <div class="card add-card">+</div>
+        <form action="">
+            <input type="text">
+            <input type="text">
+            <button type="reset">button</button>
+        </form>
+        <!--? ⬇ mouse over event example -->
+        <!-- <div class="card add-card"><span>+</span></div> -->
+    </div>
+</body>
+
+</html>
